@@ -14,19 +14,16 @@ html {
    ✅ FIX COMPLETO per react-slick su GitHub Pages e mobile
    ========================================================== */
 
-/* 🔹 Allinea correttamente gli slide */
 .slick-track {
     display: flex !important;
     align-items: stretch !important;
 }
 
-/* 🔹 Ogni slide occupa tutta la larghezza disponibile */
 .slick-slide {
     display: flex !important;
     justify-content: center !important;
 }
 
-/* 🔹 Ogni contenitore interno prende 100% della larghezza */
 .slick-slide>div {
     flex: 1 0 100% !important;
     max-width: 100% !important;
@@ -34,12 +31,10 @@ html {
     justify-content: center;
 }
 
-/* 🔹 (Facoltativo) Evita spazi o compressioni strane */
 .slick-list {
     overflow: hidden !important;
 }
 
-/* 🔹 Migliora il comportamento touch */
 .slick-slider {
     touch-action: pan-y !important;
 }
