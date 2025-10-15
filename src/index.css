@@ -15,3 +15,19 @@ html {
     display: flex !important;
     justify-content: center;
 }
+
+/* 🔹 Fix mobile per react-slick su GitHub Pages */
+.slick-slide {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.slick-track {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.slick-slide>div {
+    width: 100% !important;
+    max-width: 100% !important;
+}
