@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 // 🔹 Importa le immagini da assets 
@@ -9,14 +9,23 @@ import img4 from "../assets/logo-vecchio.png";
 
 export default function Gallery() {
     const sliderRef = useRef(null);
+    const [width, setWidth] = useState(window.innerWidth);
 
-    // 🔹 Fix: forza un “refresh” del carosello dopo il caricamento
+    // 🔹 Forza il refresh del carosello al montaggio e al resize della finestra
     useEffect(() => {
-        if (sliderRef.current) {
-            setTimeout(() => {
-                window.dispatchEvent(new Event("resize"));
-            }, 500);
-        }
+        const handleResize = () => {
+            setWidth(window.innerWidth); // forza il re-render del componente
+            if (sliderRef.current) {
+                sliderRef.current.slickGoTo(0); // resetta alla prima slide
+            }
+        };
+
+        // Trigger iniziale e listener per resize
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        // cleanup
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     // 🔹 Impostazioni del carosello
@@ -24,21 +33,12 @@ export default function Gallery() {
         dots: true,
         infinite: true,
         speed: 800,
-        slidesToShow: 3,
+        slidesToShow: width < 768 ? 1 : width < 1024 ? 2 : 3, // ✅ gestione manuale
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2500,
         pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 1024, // Tablet
-                settings: { slidesToShow: 2 },
-            },
-            {
-                breakpoint: 768, // Mobile
-                settings: { slidesToShow: 1 },
-            },
-        ],
+        arrows: false,
     };
 
     const images = [img1, img2, img3, img4];
@@ -68,7 +68,7 @@ export default function Gallery() {
                                     alt={`Gallery image ${index + 1}`}
                                     className="
                                         w-full
-                                        min-h-[300px]   /* 🔸 Previene schiacciamento su mobile */
+                                        min-h-[300px]
                                         h-[400px] md:h-[500px]
                                         object-cover
                                         rounded-2xl
