@@ -9,3 +9,9 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* 🔹 Fix per react-slick su GitHub Pages / mobile */
+.slick-slide>div {
+    display: flex !important;
+    justify-content: center;
+}
