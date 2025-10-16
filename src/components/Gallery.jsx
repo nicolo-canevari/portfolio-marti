@@ -1,93 +1,67 @@
-import React, { useEffect, useRef } from "react";
-import Slider from "react-slick";
+// 🖼️ --------------------------- GALLERY COMPONENT ---------------------------
+// Questo componente mostra una galleria di immagini in formato carosello,
+// utilizzando il plugin Swiper.js per creare un’esperienza fluida e responsive.
+// ---------------------------------------------------------------------------
 
-import img1 from "../assets/IMG_0177.jpeg";
-import img2 from "../assets/IMG_2028.jpeg";
-import img3 from "../assets/IMG_2407.jpeg";
-import img4 from "../assets/logo-vecchio.png";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";          // 🔹 Componenti base Swiper
+import { Autoplay, Pagination } from "swiper/modules";       // 🔹 Moduli aggiuntivi
+import "swiper/css";                                         // 🔹 Stili base Swiper
+import "swiper/css/pagination";                              // 🔹 Stili per la paginazione
 
+// --------------------------- IMPORT IMMAGINI ---------------------------
+import img01 from "../assets/img01.jpeg";
+import img02 from "../assets/img02.jpeg";
+import img03 from "../assets/img03.jpeg";
+import img04 from "../assets/img04.jpg";
+import img05 from "../assets/img05.jpg";
+import img06 from "../assets/img06.jpg";
+
+// --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Gallery() {
-    const sliderRef = useRef(null);
 
-    useEffect(() => {
-        // 🔹 Fix: forza il resize più volte per sistemi mobili
-        const handleFix = () => {
-            window.dispatchEvent(new Event("resize"));
-        };
+    // 📸 Lista immagini mostrate nel carosello
+    const images = [img01, img02, img03, img04, img05, img06];
 
-        const timer1 = setTimeout(handleFix, 300);
-        const timer2 = setTimeout(handleFix, 1200);
-        const timer3 = setTimeout(handleFix, 2500);
-
-        return () => {
-            clearTimeout(timer1);
-            clearTimeout(timer2);
-            clearTimeout(timer3);
-        };
-    }, []);
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 800,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2500,
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: { slidesToShow: 2 },
-            },
-            {
-                breakpoint: 768,
-                settings: { slidesToShow: 1, centerMode: true, centerPadding: "0px" },
-            },
-        ],
-    };
-
-    const images = [img1, img2, img3, img4];
-
+    // --------------------------- STRUTTURA VISIVA ---------------------------
     return (
         <section id="galleria" className="bg-white py-20">
-            <div className="max-w-6xl mx-auto px-6 md:px-10">
-                <h2 className="text-4xl font-serif font-bold text-emerald-800 mb-12 text-center">
+            <div className="max-w-6xl mx-auto px-4">
+
+                {/* 🏷️ TITOLO SEZIONE */}
+                <h2 className="text-4xl font-serif font-bold text-emerald-800 mb-16 text-center">
                     Galleria <span className="text-emerald-500">OftalZoo</span>
                 </h2>
 
-                <Slider ref={sliderRef} {...settings}>
-                    {images.map((src, index) => (
-                        <div key={index} className="px-4">
-                            <div
-                                className="
-                  rounded-2xl 
-                  overflow-hidden 
-                  shadow-md 
-                  hover:shadow-lg 
-                  transition-all 
-                  duration-300
-                "
-                            >
+                {/* 🎠 CAROSELLO SWIPER */}
+                <Swiper
+                    modules={[Autoplay, Pagination]}   // Moduli attivi: autoplay + paginazione
+                    autoplay={{
+                        delay: 2500,                   // ⏱️ Cambio immagine ogni 2.5s
+                        disableOnInteraction: false,   // 🔁 Continua anche se l’utente interagisce
+                    }}
+                    pagination={{ clickable: true }}    // 🔘 Punti di navigazione cliccabili
+                    loop={true}                         // 🔄 Ripetizione infinita
+                    breakpoints={{
+                        0: { slidesPerView: 1, spaceBetween: 20 },     // 📱 Mobile
+                        768: { slidesPerView: 2, spaceBetween: 30 },   // 📲 Tablet
+                        1024: { slidesPerView: 3, spaceBetween: 40 },  // 💻 Desktop
+                    }}
+                    className="rounded-3xl"
+                >
+                    {/* 🔹 Genero dinamicamente ogni slide */}
+                    {images.map((src, i) => (
+                        <SwiperSlide key={i}>
+                            <div className="overflow-hidden rounded-3xl shadow-lg transition-transform duration-300 hover:scale-105">
                                 <img
                                     src={src}
-                                    alt={`Gallery image ${index + 1}`}
-                                    className="
-                    w-full
-                    min-h-[320px]
-                    h-[420px] md:h-[500px]
-                    object-cover
-                    rounded-2xl
-                    shadow-lg
-                    transition-transform
-                    duration-500
-                    hover:scale-[1.03]
-                  "
+                                    alt={`Slide ${i + 1}`} // 🔠 Testo alternativo dinamico
+                                    className="w-full h-[400px] object-cover" // 📐 Riempie contenitore mantenendo proporzioni
                                 />
                             </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </Slider>
+                </Swiper>
             </div>
         </section>
     );
