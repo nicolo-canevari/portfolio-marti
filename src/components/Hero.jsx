@@ -143,9 +143,139 @@
 
 // 🟢 --------------------------- IMPORTAZIONI ---------------------------
 import React from "react";
+import { motion } from "framer-motion"; // 🔹 Animazioni fluide e ottimizzate
 
 // 🟩 --------------------------- COMPONENTE HERO ---------------------------
 export default function Hero() {
+    // =====================================================================
+    // 🟢 DATI: ESPERIENZE DI MARTINO CANEVARI
+    // =====================================================================
+    const esperienzeMartino = [
+        {
+            icon: "🏥",
+            ruolo: "Veterinary Ophthalmologist",
+            luogo: "Ospedale Veterinario San Francesco, Milano",
+            periodo: "set 2025 - Presente",
+        },
+        {
+            icon: "🏇",
+            ruolo: "Equine Ophthalmologist",
+            luogo: "Oftalzoo · Freelance",
+            periodo: "giu 2025 - Presente",
+        },
+        {
+            icon: "🏥",
+            ruolo: "Veterinary Ophthalmologist",
+            luogo: "Ambulatorio Veterinario Canevari, Landriano",
+            periodo: "set 2023 - Presente",
+        },
+        {
+            icon: "🐶",
+            ruolo: "Small Animal Rotating Internship",
+            luogo: "AniCura, Bologna",
+            periodo: "apr 2024 - apr 2025",
+        },
+        {
+            icon: "🎓",
+            ruolo: "Externship",
+            luogo: "AniCura Milano Tibaldi",
+            periodo: "ott 2023 - gen 2024",
+        },
+        {
+            icon: "🎓",
+            ruolo: "Curso en Oftalmologia Veterinaria",
+            luogo: "Universitat Autònoma de Barcelona",
+            periodo: "gen 2024 - dic 2025",
+        },
+        {
+            icon: "🎓",
+            ruolo: "Externship",
+            luogo: "Universitat Autònoma de Barcelona",
+            periodo: "lug 2023 - ago 2023",
+        },
+        {
+            icon: "🎓",
+            ruolo: "Externship",
+            luogo: "Hospital Veterinario Puchol, Madrid",
+            periodo: "ott 2022 - apr 2023",
+        },
+    ];
+
+    // =====================================================================
+    // 🟢 DATI: PERCORSO DI SIMONA DESTEFANIS
+    // =====================================================================
+    const esperienzeSimona = [
+        {
+            icon: "🎤",
+            text: "Relatrice in congressi, seminari e corsi nazionali; socia della Società Oftalmologia Veterinaria Italiana (SOVI).",
+        },
+        {
+            icon: "📘",
+            text: (
+                <>
+                    <strong>2009–2011:</strong> Corsi SOVI–FSA per la prevenzione delle malattie oculari ereditarie e corso avanzato “Retinal Disease” (Cremona).
+                </>
+            ),
+        },
+        {
+            icon: "👁️",
+            text: (
+                <>
+                    <strong>2007:</strong> Socia fondatrice dell’Associazione Nazionale Veterinari Oftalmologi (ANVO); membro del Comitato Scientifico dal 2013.
+                </>
+            ),
+        },
+        {
+            icon: "⚡",
+            text: (
+                <>
+                    <strong>2006:</strong> Corso Avanzato di Elettroretinografia Oculare (SOVI).
+                </>
+            ),
+        },
+        {
+            icon: "⚡",
+            text: (
+                <>
+                    <strong>2002–2004:</strong> Formazione in Elettrofisiologia oculare (Lione e Alfort) e corsi internazionali presso la North Carolina State University (USA).
+                </>
+            ),
+        },
+        {
+            icon: "💉",
+            text: (
+                <>
+                    <strong>2000–2002:</strong> Corsi di Facoemulsificazione Alcon (Milano) e stage presso il Dipartimento di Oftalmologia di Parigi.
+                </>
+            ),
+        },
+        {
+            icon: "🇫🇷",
+            text: (
+                <>
+                    <strong>1999–2000:</strong> Diploma in Oftalmologia presso l’École Nationale Vétérinaire d’Alfort de Paris
+                    <br />
+                    <span className="text-gray-600 text-sm">(Prof. B. Clerc – Diplomato ECVO)</span>
+                </>
+            ),
+        },
+        {
+            icon: "🎓",
+            text: "Laureata in Medicina Veterinaria presso l’Università degli Studi di Milano (1998).",
+        },
+    ];
+
+    // =====================================================================
+    // 🟢 ANIMAZIONI: VARIANTI PER ENTRATA FLUIDA
+    // =====================================================================
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
+    // =====================================================================
+    // 🟢 RENDER COMPONENTE
+    // =====================================================================
     return (
         <section
             id="home"
@@ -174,114 +304,71 @@ export default function Hero() {
             {/* 🟢 BLOCCO DOPPIO - MARTINO / SIMONA */}
             {/* ===================================================================== */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-
                 {/* ===================================================================== */}
                 {/* 🔹 COLONNA SINISTRA - DOTT. MARTINO CANEVARI */}
                 {/* ===================================================================== */}
-                <div className="bg-emerald-50 rounded-2xl p-8 shadow-sm border border-emerald-100">
+                <motion.div
+                    className="bg-emerald-50 rounded-2xl p-8 shadow-sm border border-emerald-100"
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     <h2 className="text-3xl font-serif font-bold text-emerald-700 mb-2">
                         Dott. Martino <span className="text-emerald-500">Canevari</span>
                     </h2>
-                    <h3 className="text-lg text-gray-600 mb-6">
-                        Medico Veterinario
-                    </h3>
+                    <h3 className="text-lg text-gray-600 mb-6">Medico Veterinario</h3>
 
                     <ul className="space-y-4 text-gray-800">
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🏥</span>
-                            <span>
-                                <strong>Veterinary Ophthalmologist</strong> – Ospedale Veterinario San Francesco, Milano
-                                <br /><span className="text-gray-600 text-sm">set 2025 - Presente</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🏇</span>
-                            <span>
-                                <strong>Equine Ophthalmologist</strong> – Oftalzoo · Freelance
-                                <br /><span className="text-gray-600 text-sm">giu 2025 - Presente</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🏥</span>
-                            <span>
-                                <strong>Veterinary Ophthalmologist</strong> – Ambulatorio Veterinario Canevari, Landriano
-                                <br /><span className="text-gray-600 text-sm">set 2023 - Presente</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🐶</span>
-                            <span>
-                                <strong>Small Animal Rotating Internship</strong> – AniCura, Bologna
-                                <br /><span className="text-gray-600 text-sm">apr 2024 - apr 2025</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🎓</span>
-                            <span>
-                                <strong>Externship</strong> – AniCura Milano Tibaldi
-                                <br /><span className="text-gray-600 text-sm">ott 2023 - gen 2024</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🎓</span>
-                            <span>
-                                <strong>Curso en Oftalmologia Veterinaria</strong> – Universitat Autònoma de Barcelona
-                                <br /><span className="text-gray-600 text-sm">gen 2024 - dic 2025</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🎓</span>
-                            <span>
-                                <strong>Externship</strong> – Universitat Autònoma de Barcelona
-                                <br /><span className="text-gray-600 text-sm">lug 2023 - ago 2023</span>
-                            </span>
-                        </li>
-
-                        <li className="flex gap-2 items-start">
-                            <span className="text-lg">🎓</span>
-                            <span>
-                                <strong>Externship</strong> – Hospital Veterinario Puchol, Madrid
-                                <br /><span className="text-gray-600 text-sm">ott 2022 - apr 2023</span>
-                            </span>
-                        </li>
+                        {esperienzeMartino.map((item, index) => (
+                            <li key={index} className="flex gap-2 items-start">
+                                <motion.span
+                                    className="text-lg"
+                                    whileHover={{ scale: 1.2 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                >
+                                    {item.icon}
+                                </motion.span>
+                                <span>
+                                    <strong>{item.ruolo}</strong> – {item.luogo}
+                                    <br />
+                                    <span className="text-gray-600 text-sm">{item.periodo}</span>
+                                </span>
+                            </li>
+                        ))}
                     </ul>
-                </div>
+                </motion.div>
 
                 {/* ===================================================================== */}
                 {/* 🔹 COLONNA DESTRA - DOTT.SSA SIMONA DESTEFANIS */}
                 {/* ===================================================================== */}
-                <div className="bg-emerald-50 rounded-2xl p-8 shadow-sm border border-emerald-100">
+                <motion.div
+                    className="bg-emerald-50 rounded-2xl p-8 shadow-sm border border-emerald-100"
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     <h2 className="text-3xl font-serif font-bold text-emerald-700 mb-2">
                         Dott.ssa Simona <span className="text-emerald-500">Destefanis</span>
                     </h2>
-                    <h3 className="text-lg text-gray-600 mb-6">
-                        Medico Veterinario
-                    </h3>
+                    <h3 className="text-lg text-gray-600 mb-6">Medico Veterinario</h3>
 
                     <ul className="space-y-3">
-                        {[
-                            { icon: "🎤", text: "Relatrice in congressi, seminari e corsi nazionali; socia della Società Oftalmologia Veterinaria Italiana (SOVI)." },
-                            { icon: "📘", text: <><strong>2009–2011:</strong> Corsi SOVI–FSA per la prevenzione delle malattie oculari ereditarie e corso avanzato “Retinal Disease” (Cremona).</> },
-                            { icon: "👁️", text: <><strong>2007:</strong> Socia fondatrice dell’Associazione Nazionale Veterinari Oftalmologi (ANVO); membro del Comitato Scientifico dal 2013.</> },
-                            { icon: "⚡", text: <><strong>2006:</strong> Corso Avanzato di Elettroretinografia Oculare (SOVI).</> },
-                            { icon: "⚡", text: <><strong>2002–2004:</strong> Formazione in Elettrofisiologia oculare (Lione e Alfort) e corsi internazionali presso la North Carolina State University (USA).</> },
-                            { icon: "💉", text: <><strong>2000–2002:</strong> Corsi di Facoemulsificazione Alcon (Milano) e stage presso il Dipartimento di Oftalmologia di Parigi.</> },
-                            { icon: "🇫🇷", text: <><strong>1999–2000:</strong> Diploma in Oftalmologia presso l’École Nationale Vétérinaire d’Alfort de Paris<br /><span className='text-gray-600 text-sm'>(Prof. B. Clerc – Diplomato ECVO)</span></> },
-                            { icon: "🎓", text: "Laureata in Medicina Veterinaria presso l’Università degli Studi di Milano (1998)." },
-                        ].map((item, i) => (
-                            <li key={i} className="flex items-start">
-                                <span className="mr-3 text-xl leading-6">{item.icon}</span>
+                        {esperienzeSimona.map((item, index) => (
+                            <li key={index} className="flex items-start">
+                                <motion.span
+                                    className="mr-3 text-xl leading-6"
+                                    animate={{ scale: [1, 1.2, 1] }}
+                                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                >
+                                    {item.icon}
+                                </motion.span>
                                 <span className="text-gray-800 leading-relaxed">{item.text}</span>
                             </li>
                         ))}
                     </ul>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
