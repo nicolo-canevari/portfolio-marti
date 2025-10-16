@@ -1,4 +1,6 @@
-# Logs
+# ==========================================================
+# 📜 LOG FILES — Tutti i file di log generati da Node, npm, yarn, pnpm, ecc.
+# ==========================================================
 logs
 *.log
 npm-debug.log*
@@ -7,18 +9,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# ==========================================================
+# 📦 BUILD / DEPENDENCIES — File e cartelle generati automaticamente
+# ==========================================================
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# ==========================================================
+# ⚙️ ENVIRONMENT / CONFIGURAZIONI LOCALI
+# ==========================================================
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# ==========================================================
+# 🧰 IDEs & EDITOR FILES — Configurazioni specifiche per IDE/editor
+# ==========================================================
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.DS_Store
+Thumbs.db
+
+# ==========================================================
+# 💻 SYSTEM / CACHE FILES — File temporanei e cache di build
+# ==========================================================
+*.cache
+.cache/
+vite.config.ts.timestamp-*
+vite.config.js.timestamp-*
+*.tsbuildinfo

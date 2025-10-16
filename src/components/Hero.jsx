@@ -1,4 +1,4 @@
-// // 🟢 --------------------------- IMPORTAZIONI ---------------------------
+// // 🟢 --------------------------- HERO SOLO PER MARTINO ---------------------------
 // // Importiamo React e l’immagine principale dell’hero section
 // import React from "react";
 // import heroImage from "../assets/hero-image.jpg"; // 🔹 Sostituisci con l’immagine reale
