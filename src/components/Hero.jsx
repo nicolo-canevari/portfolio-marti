@@ -359,7 +359,7 @@ export default function Hero() {
                             <li key={index} className="flex items-start">
                                 <motion.span
                                     className="mr-3 text-xl leading-6"
-                                    animate={{ scale: [1, 1.2, 1] }}
+                                    whileHover={{ scale: 1.2 }}
                                     transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                                 >
                                     {item.icon}
