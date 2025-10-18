@@ -1,18 +1,26 @@
-// 🟢 --------------------------- IMPORTAZIONI ---------------------------
+// 🩺 --------------------------- SERVICES COMPONENT ---------------------------
+// Questo componente mostra i principali servizi offerti da OftalZoo,
+// ciascuno rappresentato da un’icona, un titolo e un elenco di descrizioni.
+// È animato con Framer Motion per rendere l’esperienza fluida e moderna.
+// ---------------------------------------------------------------------------
+
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion";               // 🔹 Libreria per animazioni
 import {
     Eye,
-    Scissors,
     Droplet,
     Activity,
     Syringe,
-    PawPrint
-} from "lucide-react";
+    Stethoscope,
+} from "lucide-react";                                // 🔹 Icone principali (Lucide)
+import { Horse } from "phosphor-react";               // 🐴 Icona cavallo (Phosphor)
 
-// 🟩 --------------------------- COMPONENTE SERVICES ---------------------------
+// ---------------------------------------------------------------------------
+// 🟢 COMPONENTE PRINCIPALE
+// ---------------------------------------------------------------------------
 export default function Services() {
-    // 🔹 Lista aggiornata dei servizi
+
+    // 🧩 Lista dinamica dei servizi offerti
     const services = [
         {
             titolo: "Chirurgia Palpebrale",
@@ -22,7 +30,7 @@ export default function Services() {
                 "Disordini ciliari (criochirurgia, termocauterio, laser diodi)",
                 "Chirurgia per neoformazioni palpebrali",
             ],
-            icona: <Scissors className="w-14 h-14 text-emerald-600 mx-auto" />,
+            icona: <Stethoscope className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
             titolo: "Chirurgia Corneale",
@@ -62,21 +70,26 @@ export default function Services() {
             descrizione: [
                 "Visite oftalmologiche per cavalli su appuntamento",
             ],
-            icona: <PawPrint className="w-14 h-14 text-emerald-600 mx-auto" />,
+            icona: <Horse className="w-14 h-14 text-emerald-600 mx-auto" />, // 🐴 da Phosphor
         },
     ];
 
-    // 🟩 --------------------------- RENDER DEL COMPONENTE ---------------------------
+    // ---------------------------------------------------------------------------
+    // 🎨 STRUTTURA VISIVA
+    // ---------------------------------------------------------------------------
     return (
         <section id="servizi" className="bg-emerald-100 py-20">
             <div className="max-w-6xl mx-auto px-6 md:px-10">
-                {/* --------------------------- TITOLO SEZIONE --------------------------- */}
+
+                {/* 🏷️ TITOLO SEZIONE */}
                 <h2 className="text-4xl font-serif font-bold text-emerald-800 mb-12 text-center">
                     Servizi <span className="text-emerald-500">Offerti</span>
                 </h2>
 
-                {/* --------------------------- GRIGLIA SERVIZI --------------------------- */}
+                {/* 🧱 GRIGLIA SERVIZI */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    {/* 🔹 Mappatura dinamica dei servizi */}
                     {services.map((servizio, index) => (
                         <motion.div
                             key={index}
@@ -86,7 +99,7 @@ export default function Services() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             whileHover={{ scale: 1.05 }}
                         >
-                            {/* 🔹 Icona animata */}
+                            {/* 🎞️ ICONA ANIMATA */}
                             <motion.div
                                 className="mb-4"
                                 animate={{ scale: [1, 1.1, 1] }}
@@ -99,12 +112,12 @@ export default function Services() {
                                 {servizio.icona}
                             </motion.div>
 
-                            {/* 🔹 Titolo */}
+                            {/* 🩵 TITOLO */}
                             <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
                                 {servizio.titolo}
                             </h3>
 
-                            {/* 🔹 Descrizione con lista ordinata */}
+                            {/* 📋 ELENCO DESCRIZIONI */}
                             <ul className="list-disc list-inside text-gray-700 leading-relaxed text-left space-y-2">
                                 {servizio.descrizione.map((item, i) => (
                                     <li
