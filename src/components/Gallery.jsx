@@ -1,15 +1,19 @@
 // 🖼️ --------------------------- GALLERY COMPONENT ---------------------------
-// Questo componente mostra una galleria di immagini in formato carosello,
-// utilizzando il plugin Swiper.js per creare un’esperienza fluida e responsive.
+// Sezione dedicata alla galleria fotografica di OftalZoo 🐾
+// Utilizza Swiper.js per creare un carosello elegante e reattivo,
+// con immagini animate e testi completamente traducibili tramite i18next.
 // ---------------------------------------------------------------------------
 
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";          // 🔹 Componenti base Swiper
-import { Autoplay, Pagination } from "swiper/modules";       // 🔹 Moduli aggiuntivi
-import "swiper/css";                                         // 🔹 Stili base Swiper
-import "swiper/css/pagination";                              // 🔹 Stili per la paginazione
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { useTranslation } from "react-i18next"; // 🌍 Supporto multilingua
 
 // --------------------------- IMPORT IMMAGINI ---------------------------
+// Ogni immagine rappresenta un momento o un caso clinico del centro OftalZoo.
 import img01 from "../assets/img01.jpeg";
 import img02 from "../assets/img02.jpeg";
 import img03 from "../assets/img03.jpeg";
@@ -19,44 +23,46 @@ import img06 from "../assets/img06.jpg";
 
 // --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Gallery() {
+    const { t } = useTranslation(); // 🌐 Inizializzazione hook traduzioni
 
-    // 📸 Lista immagini mostrate nel carosello
+    // 📸 Array contenente le immagini mostrate nel carosello
     const images = [img01, img02, img03, img04, img05, img06];
 
-    // --------------------------- STRUTTURA VISIVA ---------------------------
     return (
         <section id="galleria" className="bg-white py-20">
             <div className="max-w-6xl mx-auto px-4">
 
                 {/* 🏷️ TITOLO SEZIONE */}
                 <h2 className="text-4xl font-serif font-bold text-emerald-800 mb-16 text-center">
-                    Galleria <span className="text-emerald-500">OftalZoo</span>
+                    {/* Titolo principale + parola evidenziata in verde */}
+                    {t("gallery.title")}{" "}
+                    <span className="text-emerald-500">{t("gallery.highlight")}</span>
                 </h2>
 
                 {/* 🎠 CAROSELLO SWIPER */}
                 <Swiper
-                    modules={[Autoplay, Pagination]}   // Moduli attivi: autoplay + paginazione
+                    modules={[Autoplay, Pagination]}          // 🧩 Moduli attivi
                     autoplay={{
-                        delay: 2500,                   // ⏱️ Cambio immagine ogni 2.5s
-                        disableOnInteraction: false,   // 🔁 Continua anche se l’utente interagisce
+                        delay: 2500,                         // ⏱️ Tempo di rotazione
+                        disableOnInteraction: false,          // ▶️ Continua dopo interazione
                     }}
-                    pagination={{ clickable: true }}    // 🔘 Punti di navigazione cliccabili
-                    loop={true}                         // 🔄 Ripetizione infinita
+                    pagination={{ clickable: true }}          // 🔘 Pallini di navigazione
+                    loop={true}                               // 🔁 Scorrimento infinito
                     breakpoints={{
-                        0: { slidesPerView: 1, spaceBetween: 20 },     // 📱 Mobile
-                        768: { slidesPerView: 2, spaceBetween: 30 },   // 📲 Tablet
-                        1024: { slidesPerView: 3, spaceBetween: 40 },  // 💻 Desktop
+                        0: { slidesPerView: 1, spaceBetween: 20 },
+                        768: { slidesPerView: 2, spaceBetween: 30 },
+                        1024: { slidesPerView: 3, spaceBetween: 40 },
                     }}
                     className="rounded-3xl"
                 >
-                    {/* 🔹 Genero dinamicamente ogni slide */}
+                    {/* 🖼️ CICLO IMMAGINI */}
                     {images.map((src, i) => (
                         <SwiperSlide key={i}>
                             <div className="overflow-hidden rounded-3xl shadow-lg transition-transform duration-300 hover:scale-105">
                                 <img
                                     src={src}
-                                    alt={`Slide ${i + 1}`} // 🔠 Testo alternativo dinamico
-                                    className="w-full h-[400px] object-cover" // 📐 Riempie contenitore mantenendo proporzioni
+                                    alt={`${t("gallery.title")} ${i + 1}`} // 🈴 Testo ALT tradotto
+                                    className="w-full h-[400px] object-cover"
                                 />
                             </div>
                         </SwiperSlide>

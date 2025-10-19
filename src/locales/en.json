@@ -1,0 +1,193 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "gallery": "Gallery",
+        "contacts": "Contacts"
+    },
+    "hero": {
+        "titolo": "Our Veterinary Ophthalmology Team",
+        "sottotitolo": "A team of veterinary doctors specialized in ophthalmology, united by clinical experience, international training, and a deep passion for animal eye health.",
+        "btnApri": "Our experiences",
+        "btnChiudi": "Close experiences",
+        "martino": {
+            "nome": "Dr. Martino Canevari",
+            "ruolo": "Veterinary Surgeon",
+            "esperienze": [
+                {
+                    "icon": "🏥",
+                    "ruolo": "Veterinary Ophthalmologist",
+                    "luogo": "San Francesco Veterinary Hospital, Milan",
+                    "periodo": "Sep 2025 - Present"
+                },
+                {
+                    "icon": "🏇",
+                    "ruolo": "Equine Ophthalmologist",
+                    "luogo": "Oftalzoo · Freelance",
+                    "periodo": "Jun 2025 - Present"
+                },
+                {
+                    "icon": "🏥",
+                    "ruolo": "Veterinary Ophthalmologist",
+                    "luogo": "Canevari Veterinary Clinic, Landriano",
+                    "periodo": "Sep 2023 - Present"
+                },
+                {
+                    "icon": "🐶",
+                    "ruolo": "Small Animal Rotating Internship",
+                    "luogo": "AniCura, Bologna",
+                    "periodo": "Apr 2024 - Apr 2025"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Externship",
+                    "luogo": "AniCura Milano Tibaldi",
+                    "periodo": "Oct 2023 - Jan 2024"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Course in Veterinary Ophthalmology",
+                    "luogo": "Universitat Autònoma de Barcelona",
+                    "periodo": "Jan 2024 - Dec 2025"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Externship",
+                    "luogo": "Universitat Autònoma de Barcelona",
+                    "periodo": "Jul 2023 - Aug 2023"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Externship",
+                    "luogo": "Puchol Veterinary Hospital, Madrid",
+                    "periodo": "Oct 2022 - Apr 2023"
+                }
+            ]
+        },
+        "simona": {
+            "nome": "Dr. Simona Destefanis",
+            "ruolo": "Veterinary Surgeon",
+            "esperienze": [
+                {
+                    "icon": "🎤",
+                    "ruolo": "Speaker at conferences and seminars",
+                    "luogo": "SOVI - Italian Veterinary Ophthalmology Society",
+                    "periodo": "Ongoing"
+                },
+                {
+                    "icon": "📘",
+                    "ruolo": "SOVI–FSA courses and advanced course 'Retinal Disease'",
+                    "luogo": "Cremona",
+                    "periodo": "2009–2011"
+                },
+                {
+                    "icon": "👁️",
+                    "ruolo": "Founding member of ANVO and Scientific Committee member",
+                    "luogo": "Italy",
+                    "periodo": "since 2007"
+                },
+                {
+                    "icon": "⚡",
+                    "ruolo": "Advanced Course in Ocular Electroretinography (SOVI)",
+                    "luogo": "Italy",
+                    "periodo": "2006"
+                },
+                {
+                    "icon": "⚡",
+                    "ruolo": "Training in ocular electrophysiology and international courses",
+                    "luogo": "Lyon, Alfort, North Carolina State University (USA)",
+                    "periodo": "2002–2004"
+                },
+                {
+                    "icon": "💉",
+                    "ruolo": "Phacoemulsification courses (Alcon) and ophthalmology internship",
+                    "luogo": "Milan and Paris",
+                    "periodo": "2000–2002"
+                },
+                {
+                    "icon": "🇫🇷",
+                    "ruolo": "Diploma in Ophthalmology",
+                    "luogo": "École Nationale Vétérinaire d’Alfort, Paris",
+                    "periodo": "1999–2000"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Degree in Veterinary Medicine",
+                    "luogo": "University of Milan",
+                    "periodo": "1998"
+                }
+            ]
+        }
+    },
+    "services": {
+        "title": "Services",
+        "highlight": "Offered",
+        "list": {
+            "chirurgia_palpebrale": {
+                "title": "Eyelid Surgery",
+                "items": [
+                    "Entropion/Ectropion – routine and complex",
+                    "Third eyelid surgery, including 'cherry eye'",
+                    "Ciliary disorders (cryosurgery, thermocautery, diode laser)",
+                    "Surgery for eyelid masses"
+                ]
+            },
+            "chirurgia_corneale": {
+                "title": "Corneal Surgery",
+                "items": [
+                    "Corneal cross-linking (PACK-CXL)",
+                    "Corneoconjunctival transposition, conjunctival flaps, Biosis®…",
+                    "Corneal grafts/transplants"
+                ]
+            },
+            "occhio_secco": {
+                "title": "Dry Eye",
+                "items": [
+                    "Management with supracoroidal cyclosporine A implants"
+                ]
+            },
+            "glaucoma": {
+                "title": "Glaucoma",
+                "items": [
+                    "Diode laser therapy (810nm)",
+                    "Gonioshunt with Ahmed valve"
+                ]
+            },
+            "chirurgia_intraoculare": {
+                "title": "Intraocular Surgery",
+                "items": [
+                    "Management of intraocular tumors",
+                    "Aqueous and vitreous humor sampling",
+                    "Lens luxation"
+                ]
+            },
+            "oftalmologia_equina": {
+                "title": "Equine Ophthalmology",
+                "items": [
+                    "Ophthalmic examinations for horses by appointment"
+                ]
+            }
+        }
+    },
+    "gallery": {
+        "title": "Gallery",
+        "highlight": "OftalZoo"
+    },
+    "contacts": {
+        "title": "Contacts",
+        "highlight": "OftalZoo",
+        "clinic1": {
+            "name": "Canevari Veterinary Clinic",
+            "address": "Via C. Cattaneo, 2, 27015 Landriano (PV)",
+            "phone": "+39 0382 65022",
+            "mobile": "+39 366 537 0259"
+        },
+        "clinic2": {
+            "name": "San Francesco Veterinary Hospital",
+            "address": "Via Isaac Newton, 2, 20148 Milan (MI)",
+            "phone": "+39 02 9972 5053"
+        },
+        "copyright": "© {{year}} Canevari Veterinary Clinic · All rights reserved"
+    }
+}

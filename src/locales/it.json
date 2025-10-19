@@ -1,0 +1,193 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "Chi Siamo",
+        "services": "Servizi",
+        "gallery": "Galleria",
+        "contacts": "Contatti"
+    },
+    "hero": {
+        "titolo": "Il nostro team di oftalmologia veterinaria",
+        "sottotitolo": "Un team di medici veterinari specializzati in oftalmologia, uniti da esperienza clinica, formazione internazionale e una profonda passione per la salute oculare degli animali.",
+        "btnApri": "Le nostre esperienze",
+        "btnChiudi": "Chiudi esperienze",
+        "martino": {
+            "nome": "Dott. Martino Canevari",
+            "ruolo": "Medico Veterinario",
+            "esperienze": [
+                {
+                    "icon": "🏥",
+                    "ruolo": "Veterinary Ophthalmologist",
+                    "luogo": "Ospedale Veterinario San Francesco, Milano",
+                    "periodo": "set 2025 - Presente"
+                },
+                {
+                    "icon": "🏇",
+                    "ruolo": "Equine Ophthalmologist",
+                    "luogo": "Oftalzoo · Freelance",
+                    "periodo": "giu 2025 - Presente"
+                },
+                {
+                    "icon": "🏥",
+                    "ruolo": "Veterinary Ophthalmologist",
+                    "luogo": "Ambulatorio Veterinario Canevari, Landriano",
+                    "periodo": "set 2023 - Presente"
+                },
+                {
+                    "icon": "🐶",
+                    "ruolo": "Small Animal Rotating Internship",
+                    "luogo": "AniCura, Bologna",
+                    "periodo": "apr 2024 - apr 2025"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Externship",
+                    "luogo": "AniCura Milano Tibaldi",
+                    "periodo": "ott 2023 - gen 2024"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Curso en Oftalmologia Veterinaria",
+                    "luogo": "Universitat Autònoma de Barcelona",
+                    "periodo": "gen 2024 - dic 2025"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Externship",
+                    "luogo": "Universitat Autònoma de Barcelona",
+                    "periodo": "lug 2023 - ago 2023"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Externship",
+                    "luogo": "Hospital Veterinario Puchol, Madrid",
+                    "periodo": "ott 2022 - apr 2023"
+                }
+            ]
+        },
+        "simona": {
+            "nome": "Dott.ssa Simona Destefanis",
+            "ruolo": "Medico Veterinario",
+            "esperienze": [
+                {
+                    "icon": "🎤",
+                    "ruolo": "Relatrice in congressi e seminari",
+                    "luogo": "SOVI - Società Oftalmologia Veterinaria Italiana",
+                    "periodo": "Continuativo"
+                },
+                {
+                    "icon": "📘",
+                    "ruolo": "Corsi SOVI–FSA e corso avanzato 'Retinal Disease'",
+                    "luogo": "Cremona",
+                    "periodo": "2009–2011"
+                },
+                {
+                    "icon": "👁️",
+                    "ruolo": "Socia fondatrice ANVO e membro del Comitato Scientifico",
+                    "luogo": "Italia",
+                    "periodo": "dal 2007"
+                },
+                {
+                    "icon": "⚡",
+                    "ruolo": "Corso Avanzato di Elettroretinografia Oculare (SOVI)",
+                    "luogo": "Italia",
+                    "periodo": "2006"
+                },
+                {
+                    "icon": "⚡",
+                    "ruolo": "Formazione in Elettrofisiologia oculare e corsi internazionali",
+                    "luogo": "Lione, Alfort, North Carolina State University (USA)",
+                    "periodo": "2002–2004"
+                },
+                {
+                    "icon": "💉",
+                    "ruolo": "Corsi di Facoemulsificazione Alcon e stage in Oftalmologia",
+                    "luogo": "Milano e Parigi",
+                    "periodo": "2000–2002"
+                },
+                {
+                    "icon": "🇫🇷",
+                    "ruolo": "Diploma in Oftalmologia",
+                    "luogo": "École Nationale Vétérinaire d’Alfort de Paris",
+                    "periodo": "1999–2000"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Laurea in Medicina Veterinaria",
+                    "luogo": "Università degli Studi di Milano",
+                    "periodo": "1998"
+                }
+            ]
+        }
+    },
+    "services": {
+        "title": "Servizi",
+        "highlight": "Offerti",
+        "list": {
+            "chirurgia_palpebrale": {
+                "title": "Chirurgia Palpebrale",
+                "items": [
+                    "Entropion/Ectropion – di routine e complesso",
+                    "Chirurgia della terza palpebra, compreso il “cherry eye”",
+                    "Disordini ciliari (criochirurgia, termocauterio, laser diodi)",
+                    "Chirurgia per neoformazioni palpebrali"
+                ]
+            },
+            "chirurgia_corneale": {
+                "title": "Chirurgia Corneale",
+                "items": [
+                    "Cross-linking corneale (PACK-CXL)",
+                    "Trasposizione corneo-congiuntivale, flap congiuntivali, Biosis®…",
+                    "Innesti/Trapianti corneali"
+                ]
+            },
+            "occhio_secco": {
+                "title": "Occhio Secco",
+                "items": [
+                    "Gestione con impianti di ciclosporina A supracoroidei"
+                ]
+            },
+            "glaucoma": {
+                "title": "Glaucoma",
+                "items": [
+                    "Terapia con laser a diodi (810nm)",
+                    "Gonioshunt con valvola Ahmed"
+                ]
+            },
+            "chirurgia_intraoculare": {
+                "title": "Chirurgia Intraoculare",
+                "items": [
+                    "Gestione dei tumori intraoculari",
+                    "Prelievo di umor acqueo e vitreo",
+                    "Lussazione del cristallino"
+                ]
+            },
+            "oftalmologia_equina": {
+                "title": "Oftalmologia Equina",
+                "items": [
+                    "Visite oftalmologiche per cavalli su appuntamento"
+                ]
+            }
+        }
+    },
+    "gallery": {
+        "title": "Galleria",
+        "highlight": "OftalZoo"
+    },
+    "contacts": {
+        "title": "Contatti",
+        "highlight": "OftalZoo",
+        "clinic1": {
+            "name": "Ambulatorio Veterinario Canevari",
+            "address": "Via C. Cattaneo, 2, 27015 Landriano (PV)",
+            "phone": "0382 65022",
+            "mobile": "+39 366 537 0259"
+        },
+        "clinic2": {
+            "name": "Ospedale Veterinario San Francesco",
+            "address": "Via Isaac Newton, 2, 20148 Milano (MI)",
+            "phone": "02 9972 5053"
+        },
+        "copyright": "© {{year}} Ambulatorio Veterinario Canevari · Tutti i diritti riservati"
+    }
+}

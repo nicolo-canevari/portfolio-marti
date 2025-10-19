@@ -1,70 +1,53 @@
 // 🟢 --------------------------- HERO COMPONENT ---------------------------
-// Questo componente mostra i due membri principali del team di OftalZoo:
-// il Dott. Martino Canevari e la Dott.ssa Simona Destefanis.
-// Include immagini, descrizioni e la possibilità di espandere i rispettivi CV
-// con un effetto animato realizzato tramite Framer Motion.
+// Sezione introduttiva del sito, che presenta i due membri principali del team:
+// 👨‍⚕️ Dott. Martino Canevari e 👩‍⚕️ Dott.ssa Simona Destefanis.
+//
+// Include:
+// ✅ Immagini e ruoli
+// ✅ CV espandibili con animazioni fluide (Framer Motion)
+// ✅ Testi multilingua gestiti tramite i18next
 // -------------------------------------------------------------------------
 
-// 🟢 --------------------------- IMPORTAZIONI ---------------------------
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // 🎞️ Per animazioni fluide
-import { ChevronUp } from "lucide-react";                // 🔹 Icona di chiusura sezione
+import { motion, AnimatePresence } from "framer-motion"; // 🎞️ Animazioni fluide
+import { ChevronUp } from "lucide-react";                // 🔹 Icona di chiusura CV
+import { useTranslation } from "react-i18next";           // 🌍 Gestione traduzioni
 
-// 🔹 Importa le immagini dei membri dal folder assets
+// 📸 Immagini dei membri del team
 import martinoImg from "../assets/martino-canevari.jpg";
 import simonaImg from "../assets/simona-destefanis.jpg";
 
 // 🟢 --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Hero() {
 
+    // 🌍 Hook traduzione i18next
+    const { t } = useTranslation();
+
     // =====================================================================
-    // 🟢 STATE: Controlla quale CV è aperto
-    //    - null: nessun CV aperto
-    //    - 0: CV di Martino aperto
-    //    - 1: CV di Simona aperto
+    // 🧠 STATE — Gestisce quale CV è attualmente aperto
     // =====================================================================
     const [openCV, setOpenCV] = useState(null);
 
     // =====================================================================
-    // 🟢 DATI: Informazioni dei membri del team
-    //    Ogni oggetto include nome, ruolo, immagine e lista esperienze.
+    // 👥 DATI MEMBRI — Estratti dinamicamente dai file di traduzione JSON
     // =====================================================================
     const membri = [
         {
-            nome: "Dott. Martino Canevari",
-            ruolo: "Medico Veterinario",
+            nome: t("hero.martino.nome"),
+            ruolo: t("hero.martino.ruolo"),
             immagine: martinoImg,
-            esperienze: [
-                { icon: "🏥", ruolo: "Veterinary Ophthalmologist", luogo: "Ospedale Veterinario San Francesco, Milano", periodo: "set 2025 - Presente" },
-                { icon: "🏇", ruolo: "Equine Ophthalmologist", luogo: "Oftalzoo · Freelance", periodo: "giu 2025 - Presente" },
-                { icon: "🏥", ruolo: "Veterinary Ophthalmologist", luogo: "Ambulatorio Veterinario Canevari, Landriano", periodo: "set 2023 - Presente" },
-                { icon: "🐶", ruolo: "Small Animal Rotating Internship", luogo: "AniCura, Bologna", periodo: "apr 2024 - apr 2025" },
-                { icon: "🎓", ruolo: "Externship", luogo: "AniCura Milano Tibaldi", periodo: "ott 2023 - gen 2024" },
-                { icon: "🎓", ruolo: "Curso en Oftalmologia Veterinaria", luogo: "Universitat Autònoma de Barcelona", periodo: "gen 2024 - dic 2025" },
-                { icon: "🎓", ruolo: "Externship", luogo: "Universitat Autònoma de Barcelona", periodo: "lug 2023 - ago 2023" },
-                { icon: "🎓", ruolo: "Externship", luogo: "Hospital Veterinario Puchol, Madrid", periodo: "ott 2022 - apr 2023" },
-            ],
+            esperienze: t("hero.martino.esperienze", { returnObjects: true }),
         },
         {
-            nome: "Dott.ssa Simona Destefanis",
-            ruolo: "Medico Veterinario",
+            nome: t("hero.simona.nome"),
+            ruolo: t("hero.simona.ruolo"),
             immagine: simonaImg,
-            esperienze: [
-                { icon: "🎤", text: "Relatrice in congressi, seminari e corsi nazionali; socia della Società Oftalmologia Veterinaria Italiana (SOVI)." },
-                { icon: "📘", text: <><strong>2009–2011:</strong> Corsi SOVI–FSA per la prevenzione delle malattie oculari ereditarie e corso avanzato “Retinal Disease” (Cremona).</> },
-                { icon: "👁️", text: <><strong>2007:</strong> Socia fondatrice ANVO; membro del Comitato Scientifico dal 2013.</> },
-                { icon: "⚡", text: <><strong>2006:</strong> Corso Avanzato di Elettroretinografia Oculare (SOVI).</> },
-                { icon: "⚡", text: <><strong>2002–2004:</strong> Formazione in Elettrofisiologia oculare (Lione e Alfort) e corsi internazionali presso la North Carolina State University (USA).</> },
-                { icon: "💉", text: <><strong>2000–2002:</strong> Corsi di Facoemulsificazione Alcon (Milano) e stage presso il Dipartimento di Oftalmologia di Parigi.</> },
-                { icon: "🇫🇷", text: <><strong>1999–2000:</strong> Diploma in Oftalmologia presso l’École Nationale Vétérinaire d’Alfort de Paris<br /><span className='text-gray-600 text-sm'>(Prof. B. Clerc – Diplomato ECVO)</span></> },
-                { icon: "🎓", text: "Laureata in Medicina Veterinaria presso l’Università degli Studi di Milano (1998)." },
-            ],
+            esperienze: t("hero.simona.esperienze", { returnObjects: true }),
         },
     ];
 
     // =====================================================================
-    // 🟢 VARIANTI ANIMAZIONE
-    //    - Definiscono il comportamento di fade-in durante lo scroll.
+    // 🎞️ VARIANTI ANIMAZIONE — Effetto "fade-in" per le card
     // =====================================================================
     const fadeIn = {
         hidden: { opacity: 0, y: 30 },
@@ -72,16 +55,15 @@ export default function Hero() {
     };
 
     // =====================================================================
-    // 🟢 FUNZIONE: toggleCV()
-    //    - Apre il CV corrispondente e chiude gli altri.
-    //    - Se clicchi di nuovo sullo stesso, si richiude.
+    // ⚙️ FUNZIONE toggleCV(index)
+    // Apre o chiude il CV del membro cliccato
     // =====================================================================
     const toggleCV = (index) => {
         setOpenCV((prev) => (prev === index ? null : index));
     };
 
     // =====================================================================
-    // 🟢 RENDER COMPONENTE
+    // 🎨 RENDER COMPONENTE
     // =====================================================================
     return (
         <section id="home" className="flex flex-col items-center max-w-6xl mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-20">
@@ -89,15 +71,14 @@ export default function Hero() {
             {/* 🏷️ INTRODUZIONE SEZIONE */}
             <div className="text-center max-w-3xl mb-16">
                 <h1 className="text-4xl md:text-5xl font-bold font-serif text-emerald-700 mb-4">
-                    Il nostro team di oftalmologia veterinaria
+                    {t("hero.titolo")}
                 </h1>
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                    Un team di medici veterinari specializzati in oftalmologia, uniti da esperienza clinica,
-                    formazione internazionale e una profonda passione per la salute oculare degli animali.
+                    {t("hero.sottotitolo")}
                 </p>
             </div>
 
-            {/* 👩‍⚕️👨‍⚕️ CARD MEMBRI */}
+            {/* 👩‍⚕️👨‍⚕️ CARD DEI MEMBRI */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
                 {membri.map((membro, index) => {
                     const isOpen = openCV === index;
@@ -111,6 +92,7 @@ export default function Hero() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                         >
+
                             {/* 📸 FOTO PROFILO */}
                             <img
                                 src={membro.immagine}
@@ -118,19 +100,19 @@ export default function Hero() {
                                 className="w-64 h-64 object-cover rounded-full mx-auto mb-6 border-4 border-emerald-200 shadow-sm"
                             />
 
-                            {/* 🧾 INFO BASE */}
+                            {/* 🧾 INFORMAZIONI BASE */}
                             <h2 className="text-2xl font-serif font-bold text-emerald-700 mb-1">{membro.nome}</h2>
                             <p className="text-gray-600 mb-4">{membro.ruolo}</p>
 
-                            {/* 🔘 BOTTONE APERTURA CV */}
+                            {/* 🔘 BOTTONE APRI/CHIUDI CV */}
                             <button
                                 onClick={() => toggleCV(index)}
                                 className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full shadow transition"
                             >
-                                {isOpen ? "Chiudi esperienze" : "Le nostre esperienze"}
+                                {isOpen ? t("hero.btnChiudi") : t("hero.btnApri")}
                             </button>
 
-                            {/* 📜 CV ESPANDIBILE */}
+                            {/* 📜 SEZIONE CV ESPANDIBILE */}
                             <AnimatePresence mode="wait">
                                 {isOpen && (
                                     <motion.div
@@ -141,6 +123,7 @@ export default function Hero() {
                                         transition={{ duration: 0.4 }}
                                         className="mt-6 text-left"
                                     >
+                                        {/* 📋 LISTA ESPERIENZE */}
                                         <ul className="space-y-3">
                                             {membro.esperienze.map((exp, i) => (
                                                 <li key={i} className="flex items-start gap-2 text-gray-800">
@@ -166,7 +149,7 @@ export default function Hero() {
                                             className="mt-6 flex items-center gap-2 mx-auto text-emerald-600 hover:text-emerald-800 transition"
                                         >
                                             <ChevronUp className="w-5 h-5" />
-                                            <span>Chiudi</span>
+                                            <span>{t("hero.btnChiudi")}</span>
                                         </button>
                                     </motion.div>
                                 )}

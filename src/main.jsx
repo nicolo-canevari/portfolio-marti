@@ -9,6 +9,9 @@ import ReactDOM from "react-dom/client";
 // 🔹 Import del componente principale dell’app
 import App from "./App.jsx";
 
+// 🔹 Import di i18n per le traduzioni
+import "./i18n.js";
+
 // ============================================================================
 // 🧩 STILI E LIBRERIE GLOBALI
 // ============================================================================

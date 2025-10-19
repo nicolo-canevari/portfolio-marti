@@ -1,30 +1,40 @@
 // 📞 --------------------------- CONTACTS COMPONENT ---------------------------
-// Mostra i riferimenti e contatti dell’Ambulatorio Canevari e dell’Ospedale San Francesco.
-// Tutti i numeri e indirizzi sono cliccabili (telefono o Google Maps).
+// Sezione dedicata ai contatti ufficiali di OftalZoo 🐾
+// Contiene le informazioni dell’Ambulatorio Veterinario Canevari e
+// dell’Ospedale Veterinario San Francesco.
+// Ogni indirizzo apre Google Maps e i numeri di telefono sono cliccabili.
 // ---------------------------------------------------------------------------
 
 import React from "react";
-import { Phone, Smartphone, MapPin } from "lucide-react";
+import { Phone, Smartphone, MapPin } from "lucide-react"; // 🔹 Icone eleganti
+import { useTranslation } from "react-i18next";            // 🌍 Traduzioni i18next
 
+// --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Contacts() {
+    const { t } = useTranslation(); // 🌐 Hook per gestire testi multilingua
+    // const year = new Date().getFullYear(); // 📆 Anno dinamico per il footer
+
     return (
         <section id="contatti" className="bg-emerald-50 py-20">
             <div className="max-w-5xl mx-auto px-6 md:px-10 text-gray-800">
-                {/* --------------------------- TITOLO --------------------------- */}
+
+                {/* 🏷️ TITOLO SEZIONE */}
                 <h2 className="text-4xl font-serif font-bold text-emerald-800 mb-12 text-center">
-                    Contatti <span className="text-emerald-500">OftalZoo</span>
+                    {t("contacts.title")}{" "}
+                    <span className="text-emerald-500">{t("contacts.highlight")}</span>
                 </h2>
 
-                {/* --------------------------- SEZIONE CONTATTI --------------------------- */}
+                {/* 🏥 BLOCCO CONTATTI PRINCIPALI */}
                 <div className="flex flex-col md:flex-row justify-between gap-12">
 
-                    {/* 🔹 Ambulatorio Veterinario Canevari */}
+                    {/* 🔹 AMBULATORIO VETERINARIO CANEVARI */}
                     <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/2">
+                        {/* Nome struttura */}
                         <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
-                            Ambulatorio Veterinario Canevari
+                            {t("contacts.clinic1.name")}
                         </h3>
 
-                        {/* 📍 Indirizzo cliccabile */}
+                        {/* 📍 Indirizzo cliccabile (Google Maps) */}
                         <p className="flex items-center gap-2 text-lg mb-3">
                             <MapPin className="text-emerald-600" size={22} />
                             <a
@@ -33,34 +43,35 @@ export default function Contacts() {
                                 rel="noopener noreferrer"
                                 className="hover:underline"
                             >
-                                Via C. Cattaneo, 2, 27015 Landriano (PV)
+                                {t("contacts.clinic1.address")}
                             </a>
                         </p>
 
-                        {/* ☎️ Telefono fisso cliccabile */}
+                        {/* ☎️ Telefono fisso */}
                         <p className="flex items-center gap-2 text-lg mb-2">
                             <Phone className="text-emerald-600" size={22} />
                             <a href="tel:038265022" className="hover:underline">
-                                0382 65022
+                                {t("contacts.clinic1.phone")}
                             </a>
                         </p>
 
-                        {/* 📱 Cellulare professionale cliccabile */}
+                        {/* 📱 Numero mobile */}
                         <p className="flex items-center gap-2 text-lg">
                             <Smartphone className="text-emerald-600" size={22} />
                             <a href="tel:+393665370259" className="hover:underline">
-                                +39 366 537 0259
+                                {t("contacts.clinic1.mobile")}
                             </a>
                         </p>
                     </div>
 
-                    {/* 🔹 Ospedale Veterinario San Francesco */}
+                    {/* 🔹 OSPEDALE VETERINARIO SAN FRANCESCO */}
                     <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/2">
+                        {/* Nome struttura */}
                         <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
-                            Ospedale Veterinario San Francesco
+                            {t("contacts.clinic2.name")}
                         </h3>
 
-                        {/* 📍 Indirizzo cliccabile */}
+                        {/* 📍 Indirizzo cliccabile (Google Maps) */}
                         <p className="flex items-center gap-2 text-lg mb-3">
                             <MapPin className="text-emerald-600" size={22} />
                             <a
@@ -69,24 +80,26 @@ export default function Contacts() {
                                 rel="noopener noreferrer"
                                 className="hover:underline"
                             >
-                                Via Isaac Newton, 2, 20148 Milano (MI)
+                                {t("contacts.clinic2.address")}
                             </a>
                         </p>
 
-                        {/* ☎️ Telefono fisso cliccabile */}
+                        {/* ☎️ Numero di telefono */}
                         <p className="flex items-center gap-2 text-lg">
                             <Phone className="text-emerald-600" size={22} />
                             <a href="tel:0299725053" className="hover:underline">
-                                02 9972 5053
+                                {t("contacts.clinic2.phone")}
                             </a>
                         </p>
                     </div>
                 </div>
 
-                {/* --------------------------- COPYRIGHT --------------------------- */}
+                {/* 🔸 COPYRIGHT (opzionale, può essere riattivato se necessario) */}
+                {/*
                 <div className="mt-16 text-center text-gray-500 text-sm">
-                    © {new Date().getFullYear()} Ambulatorio Veterinario Canevari · Tutti i diritti riservati
+                    {t("contacts.copyright", { year })}
                 </div>
+                */}
             </div>
         </section>
     );

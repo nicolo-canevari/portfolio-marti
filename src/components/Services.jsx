@@ -1,95 +1,65 @@
 // 🩺 --------------------------- SERVICES COMPONENT ---------------------------
-// Questo componente mostra i principali servizi offerti da OftalZoo,
-// ciascuno rappresentato da un’icona, un titolo e un elenco di descrizioni.
-// È animato con Framer Motion per rendere l’esperienza fluida e moderna.
-// ---------------------------------------------------------------------------
+// Mostra i principali servizi offerti da OftalZoo, con animazioni fluide
+// e testi completamente traducibili tramite i18next.
+// ------------------------------------------------------------------------------
 
 import React from "react";
-import { motion } from "framer-motion";               // 🔹 Libreria per animazioni
+import { motion } from "framer-motion";
 import {
     Eye,
     Droplet,
     Activity,
     Syringe,
     Stethoscope,
-} from "lucide-react";                                // 🔹 Icone principali (Lucide)
-import { Horse } from "phosphor-react";               // 🐴 Icona cavallo (Phosphor)
+} from "lucide-react";
+import { Horse } from "phosphor-react";
+import { useTranslation } from "react-i18next"; // ✅ Import traduzioni
 
-// ---------------------------------------------------------------------------
-// 🟢 COMPONENTE PRINCIPALE
-// ---------------------------------------------------------------------------
+
+// 🟢 --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Services() {
+    const { t } = useTranslation();
 
-    // 🧩 Lista dinamica dei servizi offerti
+    // 🔹 Servizi dinamici letti dal file JSON tramite chiavi i18n
     const services = [
         {
-            titolo: "Chirurgia Palpebrale",
-            descrizione: [
-                "Entropion/Ectropion – di routine e complesso",
-                "Chirurgia della terza palpebra, compreso il “cherry eye”",
-                "Disordini ciliari (criochirurgia, termocauterio, laser diodi)",
-                "Chirurgia per neoformazioni palpebrali",
-            ],
-            icona: <Stethoscope className="w-14 h-14 text-emerald-600 mx-auto" />,
+            key: "chirurgia_palpebrale",
+            icon: <Stethoscope className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
-            titolo: "Chirurgia Corneale",
-            descrizione: [
-                "Cross-linking corneale (PACK-CXL)",
-                "Trasposizione corneo-congiuntivale, flap congiuntivali, Biosis®…",
-                "Innesti/Trapianti corneali",
-            ],
-            icona: <Eye className="w-14 h-14 text-emerald-600 mx-auto" />,
+            key: "chirurgia_corneale",
+            icon: <Eye className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
-            titolo: "Occhio Secco",
-            descrizione: [
-                "Gestione con impianti di ciclosporina A supracoroidei",
-            ],
-            icona: <Droplet className="w-14 h-14 text-emerald-600 mx-auto" />,
+            key: "occhio_secco",
+            icon: <Droplet className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
-            titolo: "Glaucoma",
-            descrizione: [
-                "Terapia con laser a diodi (810nm)",
-                "Gonioshunt con valvola Ahmed",
-            ],
-            icona: <Activity className="w-14 h-14 text-emerald-600 mx-auto" />,
+            key: "glaucoma",
+            icon: <Activity className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
-            titolo: "Chirurgia Intraoculare",
-            descrizione: [
-                "Gestione dei tumori intraoculari",
-                "Prelievo di umor acqueo e vitreo",
-                "Lussazione del cristallino",
-            ],
-            icona: <Syringe className="w-14 h-14 text-emerald-600 mx-auto" />,
+            key: "chirurgia_intraoculare",
+            icon: <Syringe className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
-            titolo: "Oftalmologia Equina",
-            descrizione: [
-                "Visite oftalmologiche per cavalli su appuntamento",
-            ],
-            icona: <Horse className="w-14 h-14 text-emerald-600 mx-auto" />, // 🐴 da Phosphor
+            key: "oftalmologia_equina",
+            icon: <Horse className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
     ];
 
-    // ---------------------------------------------------------------------------
-    // 🎨 STRUTTURA VISIVA
-    // ---------------------------------------------------------------------------
+    // 🟢 RENDER
     return (
         <section id="servizi" className="bg-emerald-100 py-20">
             <div className="max-w-6xl mx-auto px-6 md:px-10">
-
-                {/* 🏷️ TITOLO SEZIONE */}
+                {/* 🏷️ Titolo sezione */}
                 <h2 className="text-4xl font-serif font-bold text-emerald-800 mb-12 text-center">
-                    Servizi <span className="text-emerald-500">Offerti</span>
+                    {t("services.title")}{" "}
+                    <span className="text-emerald-500">{t("services.highlight")}</span>
                 </h2>
 
-                {/* 🧱 GRIGLIA SERVIZI */}
+                {/* 🧱 Griglia servizi */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-                    {/* 🔹 Mappatura dinamica dei servizi */}
                     {services.map((servizio, index) => (
                         <motion.div
                             key={index}
@@ -99,7 +69,7 @@ export default function Services() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             whileHover={{ scale: 1.05 }}
                         >
-                            {/* 🎞️ ICONA ANIMATA */}
+                            {/* 🔹 Icona animata */}
                             <motion.div
                                 className="mb-4"
                                 animate={{ scale: [1, 1.1, 1] }}
@@ -109,28 +79,30 @@ export default function Services() {
                                     ease: "easeInOut",
                                 }}
                             >
-                                {servizio.icona}
+                                {servizio.icon}
                             </motion.div>
 
-                            {/* 🩵 TITOLO */}
+                            {/* 🔹 Titolo servizio */}
                             <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
-                                {servizio.titolo}
+                                {t(`services.list.${servizio.key}.title`)}
                             </h3>
 
-                            {/* 📋 ELENCO DESCRIZIONI */}
+                            {/* 🔹 Elenco descrizioni (array) */}
                             <ul className="list-disc list-inside text-gray-700 leading-relaxed text-left space-y-2">
-                                {servizio.descrizione.map((item, i) => (
-                                    <li
-                                        key={i}
-                                        className="pl-1"
-                                        style={{
-                                            textIndent: "-0.7em",
-                                            paddingLeft: "1.2em",
-                                        }}
-                                    >
-                                        {item}
-                                    </li>
-                                ))}
+                                {t(`services.list.${servizio.key}.items`, { returnObjects: true }).map(
+                                    (item, i) => (
+                                        <li
+                                            key={i}
+                                            className="pl-1"
+                                            style={{
+                                                textIndent: "-0.7em",
+                                                paddingLeft: "1.2em",
+                                            }}
+                                        >
+                                            {item}
+                                        </li>
+                                    )
+                                )}
                             </ul>
                         </motion.div>
                     ))}
