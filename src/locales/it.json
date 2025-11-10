@@ -9,59 +9,47 @@
     "hero": {
         "titolo": "Il nostro team di oftalmologia veterinaria",
         "sottotitolo": "Un team di medici veterinari specializzati in oftalmologia, uniti da esperienza clinica, formazione internazionale e una profonda passione per la salute oculare degli animali.",
-        "btnApri": "Le nostre esperienze",
+        "btnApri": "Le mie esperienze",
         "btnChiudi": "Chiudi esperienze",
         "martino": {
             "nome": "Dott. Martino Canevari",
             "ruolo": "Medico Veterinario",
             "esperienze": [
                 {
+                    "icon": "🎓",
+                    "ruolo": "Veterinary Ophthalmology Workshop – Management of Glaucoma and Ahmed Valve Surgery",
+                    "luogo": "Unisvet, Milano",
+                    "periodo": "Nov 2025"
+                },
+                {
+                    "icon": "🎓",
+                    "ruolo": "Veterinary Ophthalmology Course – Cataract Surgery with Phacoemulsification and Artificial Lens Implantation",
+                    "luogo": "Eickemeyer Seminarzentrum, Frankfurt",
+                    "periodo": "Sep 2025"
+                },
+                {
                     "icon": "🏥",
-                    "ruolo": "Veterinary Ophthalmologist",
-                    "luogo": "Ospedale Veterinario San Francesco, Milano",
-                    "periodo": "set 2025 - Presente"
-                },
-                {
-                    "icon": "🏇",
-                    "ruolo": "Equine Ophthalmologist",
-                    "luogo": "Oftalzoo · Freelance",
-                    "periodo": "giu 2025 - Presente"
-                },
-                {
-                    "icon": "🏥",
-                    "ruolo": "Veterinary Ophthalmologist",
-                    "luogo": "Ambulatorio Veterinario Canevari, Landriano",
-                    "periodo": "set 2023 - Presente"
-                },
-                {
-                    "icon": "🐶",
                     "ruolo": "Small Animal Rotating Internship",
-                    "luogo": "AniCura, Bologna",
-                    "periodo": "apr 2024 - apr 2025"
+                    "luogo": "AniCura – Clinica Veterinaria dell'Orologio, Bologna",
+                    "periodo": "Apr 2024 - Apr 2025"
                 },
                 {
                     "icon": "🎓",
-                    "ruolo": "Externship",
-                    "luogo": "AniCura Milano Tibaldi",
-                    "periodo": "ott 2023 - gen 2024"
-                },
-                {
-                    "icon": "🎓",
-                    "ruolo": "Curso en Oftalmologia Veterinaria",
+                    "ruolo": "Course in Veterinary Ophthalmology",
                     "luogo": "Universitat Autònoma de Barcelona",
-                    "periodo": "gen 2024 - dic 2025"
+                    "periodo": "Jan 2024 - Dec 2025"
+                },
+                {
+                    "icon": "🐴",
+                    "ruolo": "Advanced Equine Ophthalmology – Practical Course",
+                    "luogo": "VetPD, Pferdeklinik in Parsdorf",
+                    "periodo": "Oct 2023"
                 },
                 {
                     "icon": "🎓",
-                    "ruolo": "Externship",
-                    "luogo": "Universitat Autònoma de Barcelona",
-                    "periodo": "lug 2023 - ago 2023"
-                },
-                {
-                    "icon": "🎓",
-                    "ruolo": "Externship",
+                    "ruolo": "Veterinary Ophthalmology Externship",
                     "luogo": "Hospital Veterinario Puchol, Madrid",
-                    "periodo": "ott 2022 - apr 2023"
+                    "periodo": "Oct 2022 - Apr 2023"
                 }
             ]
         },
@@ -159,7 +147,8 @@
                 "items": [
                     "Gestione dei tumori intraoculari",
                     "Prelievo di umor acqueo e vitreo",
-                    "Lussazione del cristallino"
+                    "Lussazione del cristallino",
+                    "Inserimento di protesi intraoculari"
                 ]
             },
             "oftalmologia_equina": {
@@ -187,6 +176,11 @@
             "name": "Ospedale Veterinario San Francesco",
             "address": "Via Isaac Newton, 2, 20148 Milano (MI)",
             "phone": "02 9972 5053"
+        },
+        "clinic3": {
+            "name": "CDC Vet - Sede di Codogno",
+            "address": "Viale Trieste, 24, 26845 Codogno LO",
+            "phone": "0377 431619"
         },
         "copyright": "© {{year}} Ambulatorio Veterinario Canevari · Tutti i diritti riservati"
     }

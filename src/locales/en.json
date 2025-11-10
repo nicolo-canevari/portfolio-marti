@@ -9,41 +9,29 @@
     "hero": {
         "titolo": "Our Veterinary Ophthalmology Team",
         "sottotitolo": "A team of veterinary doctors specialized in ophthalmology, united by clinical experience, international training, and a deep passion for animal eye health.",
-        "btnApri": "Our experiences",
+        "btnApri": "My experiences",
         "btnChiudi": "Close experiences",
         "martino": {
             "nome": "Dr. Martino Canevari",
-            "ruolo": "Veterinary Surgeon",
+            "ruolo": "Veterinary Ophthalmologist",
             "esperienze": [
                 {
-                    "icon": "🏥",
-                    "ruolo": "Veterinary Ophthalmologist",
-                    "luogo": "San Francesco Veterinary Hospital, Milan",
-                    "periodo": "Sep 2025 - Present"
-                },
-                {
-                    "icon": "🏇",
-                    "ruolo": "Equine Ophthalmologist",
-                    "luogo": "Oftalzoo · Freelance",
-                    "periodo": "Jun 2025 - Present"
-                },
-                {
-                    "icon": "🏥",
-                    "ruolo": "Veterinary Ophthalmologist",
-                    "luogo": "Canevari Veterinary Clinic, Landriano",
-                    "periodo": "Sep 2023 - Present"
-                },
-                {
-                    "icon": "🐶",
-                    "ruolo": "Small Animal Rotating Internship",
-                    "luogo": "AniCura, Bologna",
-                    "periodo": "Apr 2024 - Apr 2025"
+                    "icon": "🎓",
+                    "ruolo": "Veterinary Ophthalmology Workshop – Management of Glaucoma and Ahmed Valve Surgery",
+                    "luogo": "Unisvet, Milan",
+                    "periodo": "Nov 2025"
                 },
                 {
                     "icon": "🎓",
-                    "ruolo": "Externship",
-                    "luogo": "AniCura Milano Tibaldi",
-                    "periodo": "Oct 2023 - Jan 2024"
+                    "ruolo": "Veterinary Ophthalmology Course – Cataract Surgery with Phacoemulsification and Artificial Lens Implantation",
+                    "luogo": "Eickemeyer Seminar Center, Frankfurt",
+                    "periodo": "Sep 2025"
+                },
+                {
+                    "icon": "🏥",
+                    "ruolo": "Small Animal Rotating Internship",
+                    "luogo": "AniCura – Clinica Veterinaria dell'Orologio, Bologna",
+                    "periodo": "Apr 2024 - Apr 2025"
                 },
                 {
                     "icon": "🎓",
@@ -52,15 +40,15 @@
                     "periodo": "Jan 2024 - Dec 2025"
                 },
                 {
-                    "icon": "🎓",
-                    "ruolo": "Externship",
-                    "luogo": "Universitat Autònoma de Barcelona",
-                    "periodo": "Jul 2023 - Aug 2023"
+                    "icon": "🐴",
+                    "ruolo": "Advanced Equine Ophthalmology – Practical Course",
+                    "luogo": "VetPD, Pferdeklinik in Parsdorf",
+                    "periodo": "Oct 2023"
                 },
                 {
                     "icon": "🎓",
-                    "ruolo": "Externship",
-                    "luogo": "Puchol Veterinary Hospital, Madrid",
+                    "ruolo": "Veterinary Ophthalmology Externship",
+                    "luogo": "Hospital Veterinario Puchol, Madrid",
                     "periodo": "Oct 2022 - Apr 2023"
                 }
             ]
@@ -159,7 +147,8 @@
                 "items": [
                     "Management of intraocular tumors",
                     "Aqueous and vitreous humor sampling",
-                    "Lens luxation"
+                    "Lens luxation",
+                    "Insertion of intraocular prostheses"
                 ]
             },
             "oftalmologia_equina": {
@@ -187,6 +176,11 @@
             "name": "San Francesco Veterinary Hospital",
             "address": "Via Isaac Newton, 2, 20148 Milan (MI)",
             "phone": "+39 02 9972 5053"
+        },
+        "clinic3": {
+            "name": "CDC Vet – Codogno Branch",
+            "address": "Viale Trieste, 24, 26845 Codogno LO",
+            "phone": "0377 431619"
         },
         "copyright": "© {{year}} Canevari Veterinary Clinic · All rights reserved"
     }

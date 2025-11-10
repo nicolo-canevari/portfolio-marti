@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";           // 🌍 Gestione tradu
 
 // 📸 Immagini dei membri del team
 import martinoImg from "../assets/martino-canevari.jpg";
-import simonaImg from "../assets/simona-destefanis.jpg";
+// import simonaImg from "../assets/simona-destefanis.jpg";
 
 // 🟢 --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Hero() {
@@ -38,12 +38,12 @@ export default function Hero() {
             immagine: martinoImg,
             esperienze: t("hero.martino.esperienze", { returnObjects: true }),
         },
-        {
-            nome: t("hero.simona.nome"),
-            ruolo: t("hero.simona.ruolo"),
-            immagine: simonaImg,
-            esperienze: t("hero.simona.esperienze", { returnObjects: true }),
-        },
+        // {
+        //     nome: t("hero.simona.nome"),
+        //     ruolo: t("hero.simona.ruolo"),
+        //     immagine: simonaImg,
+        //     esperienze: t("hero.simona.esperienze", { returnObjects: true }),
+        // },
     ];
 
     // =====================================================================
@@ -68,18 +68,23 @@ export default function Hero() {
     return (
         <section id="home" className="flex flex-col items-center max-w-6xl mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-20">
 
-            {/* 🏷️ INTRODUZIONE SEZIONE */}
-            <div className="text-center max-w-3xl mb-16">
+            {/* 🏷️ INTRODUZIONE SEZIONE CON PRESENTAZIONE */}
+            {/* <div className="text-center max-w-3xl mb-16">
                 <h1 className="text-4xl md:text-5xl font-bold font-serif text-emerald-700 mb-4">
                     {t("hero.titolo")}
                 </h1>
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                     {t("hero.sottotitolo")}
                 </p>
-            </div>
+            </div> */}
 
             {/* 👩‍⚕️👨‍⚕️ CARD DEI MEMBRI */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+
+            {/* <div> per mettere 2 card una accanto all'altra */}
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full"> */}
+
+            {/* <div> unica card centrale */}
+            <div className="flex justify-center w-full">
                 {membri.map((membro, index) => {
                     const isOpen = openCV === index;
 

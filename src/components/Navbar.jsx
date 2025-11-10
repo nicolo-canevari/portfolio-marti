@@ -96,9 +96,12 @@ export default function Navbar() {
                 {/* 🐾 LOGO E BRAND */}
                 <div className="flex items-center space-x-3">
                     <img src={logo} alt="OftalZoo Logo" className="h-10 w-auto object-contain" />
-                    <span className="text-xl md:text-2xl font-serif font-bold text-emerald-700 tracking-wide">
+
+                    {/* Scritta OftalZoo */}
+                    {/* <span className="text-xl md:text-2xl font-serif font-bold text-emerald-700 tracking-wide">
                         Oftal<span className="text-emerald-500">Zoo</span>
-                    </span>
+                    </span> */}
+
                 </div>
 
                 {/* 💻 MENU DESKTOP */}
@@ -108,8 +111,8 @@ export default function Navbar() {
                             <a
                                 href={`#${link.id}`}
                                 className={`transition-all duration-300 pb-1 ${activeSection === link.id
-                                        ? "text-emerald-800 font-semibold border-b-2 border-emerald-800"
-                                        : "hover:text-emerald-700"
+                                    ? "text-emerald-800 font-semibold border-b-2 border-emerald-800"
+                                    : "hover:text-emerald-700"
                                     }`}
                             >
                                 {link.label}
@@ -198,8 +201,8 @@ export default function Navbar() {
                                     href={`#${link.id}`}
                                     onClick={() => setMenuOpen(false)}
                                     className={`block text-lg transition-all duration-300 ${activeSection === link.id
-                                            ? "text-emerald-800 font-semibold border-b-2 border-emerald-800"
-                                            : "hover:text-emerald-700"
+                                        ? "text-emerald-800 font-semibold border-b-2 border-emerald-800"
+                                        : "hover:text-emerald-700"
                                         }`}
                                 >
                                     {link.label}

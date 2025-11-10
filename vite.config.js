@@ -5,7 +5,7 @@ import mkcert from 'vite-plugin-mkcert';  // 🔹 Genera certificati SSL locali 
 // --------------------------- CONFIGURAZIONE VITE ---------------------------
 export default defineConfig({
   plugins: [react(), mkcert()], // 🔹 Abilita React e HTTPS locale
-  base: '/portfolio-marti/', // 🔹 Base URL per GitHub Pages
+  base: '/', // 🔹 Base URL per GitHub Pages
   server: {
     https: true,        // Abilita HTTPS in locale
     host: '127.0.0.1',  // Usa l'indirizzo locale
@@ -13,4 +13,5 @@ export default defineConfig({
     strictPort: true,   // Errore se la porta è già occupata
   },
 });
+
 

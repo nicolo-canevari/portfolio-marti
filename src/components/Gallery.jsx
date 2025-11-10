@@ -20,13 +20,15 @@ import img03 from "../assets/img03.jpeg";
 import img04 from "../assets/img04.jpg";
 import img05 from "../assets/img05.jpg";
 import img06 from "../assets/img06.jpg";
+import img07 from "../assets/img07.jpg";
+import img08 from "../assets/img08.jpg";
 
 // --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Gallery() {
     const { t } = useTranslation(); // 🌐 Inizializzazione hook traduzioni
 
     // 📸 Array contenente le immagini mostrate nel carosello
-    const images = [img01, img02, img03, img04, img05, img06];
+    const images = [img01, img02, img03, img04, img05, img06, img07, img08];
 
     return (
         <section id="galleria" className="bg-white py-20">

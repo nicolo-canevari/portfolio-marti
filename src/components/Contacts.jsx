@@ -28,7 +28,7 @@ export default function Contacts() {
                 <div className="flex flex-col md:flex-row justify-between gap-12">
 
                     {/* 🔹 AMBULATORIO VETERINARIO CANEVARI */}
-                    <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/2">
+                    <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/3">
                         {/* Nome struttura */}
                         <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
                             {t("contacts.clinic1.name")}
@@ -65,7 +65,7 @@ export default function Contacts() {
                     </div>
 
                     {/* 🔹 OSPEDALE VETERINARIO SAN FRANCESCO */}
-                    <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/2">
+                    <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/3">
                         {/* Nome struttura */}
                         <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
                             {t("contacts.clinic2.name")}
@@ -92,6 +92,36 @@ export default function Contacts() {
                             </a>
                         </p>
                     </div>
+
+                    {/* 🔹 CDC VET - Sede di Codogno */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 md:w-1/3">
+                        {/* Nome struttura */}
+                        <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
+                            {t("contacts.clinic3.name")}
+                        </h3>
+
+                        {/* 📍 Indirizzo cliccabile (Google Maps) */}
+                        <p className="flex items-center gap-2 text-lg mb-3">
+                            <MapPin className="text-emerald-600" size={22} />
+                            <a
+                                href="https://www.google.com/maps/dir/?api=1&destination=Viale+Trieste+24,+26845+Codogno+LO"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline"
+                            >
+                                {t("contacts.clinic3.address")}
+                            </a>
+                        </p>
+
+                        {/* ☎️ Numero di telefono */}
+                        <p className="flex items-center gap-2 text-lg">
+                            <Phone className="text-emerald-600" size={22} />
+                            <a href="tel:0377431619" className="hover:underline">
+                                {t("contacts.clinic3.phone")}
+                            </a>
+                        </p>
+                    </div>
+
                 </div>
 
                 {/* 🔸 COPYRIGHT (opzionale, può essere riattivato se necessario) */}
@@ -100,6 +130,7 @@ export default function Contacts() {
                     {t("contacts.copyright", { year })}
                 </div>
                 */}
+
             </div>
         </section>
     );
