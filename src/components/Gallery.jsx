@@ -22,13 +22,14 @@ import img05 from "../assets/img05.jpg";
 import img06 from "../assets/img06.jpg";
 import img07 from "../assets/img07.jpg";
 import img08 from "../assets/img08.jpg";
+import img09 from "../assets/img09.jpeg";
 
 // --------------------------- COMPONENTE PRINCIPALE ---------------------------
 export default function Gallery() {
     const { t } = useTranslation(); // 🌐 Inizializzazione hook traduzioni
 
     // 📸 Array contenente le immagini mostrate nel carosello
-    const images = [img01, img02, img03, img04, img05, img06, img07, img08];
+    const images = [img01, img02, img03, img04, img05, img06, img07, img08, img09];
 
     return (
         <section id="galleria" className="bg-white py-20">
