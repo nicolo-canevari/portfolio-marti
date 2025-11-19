@@ -182,6 +182,11 @@
             "address": "Viale Trieste, 24, 26845 Codogno LO",
             "phone": "0377 431619"
         },
+        "clinic4": {
+            "name": "Pronto Soccorso Veterinario Laudense",
+            "address": "Viale Milano, 22, 26900 Lodi LO",
+            "phone": "0371 422408"
+        },
         "copyright": "© {{year}} Ambulatorio Veterinario Canevari · Tutti i diritti riservati"
     }
 }

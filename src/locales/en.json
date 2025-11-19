@@ -182,6 +182,11 @@
             "address": "Viale Trieste, 24, 26845 Codogno LO",
             "phone": "0377 431619"
         },
+        "clinic4": {
+            "name": "Laudense Veterinary Emergency Center",
+            "address": "Viale Milano, 22, 26900 Lodi LO",
+            "phone": "+39 0371 422408"
+        },
         "copyright": "© {{year}} Canevari Veterinary Clinic · All rights reserved"
     }
 }

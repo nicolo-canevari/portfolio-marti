@@ -1,8 +1,9 @@
 // 📞 --------------------------- CONTACTS COMPONENT ---------------------------
 // Sezione dedicata ai contatti ufficiali di OftalZoo 🐾
-// Contiene le informazioni dell’Ambulatorio Veterinario Canevari e
-// dell’Ospedale Veterinario San Francesco.
-// Ogni indirizzo apre Google Maps e i numeri di telefono sono cliccabili.
+// Contiene le informazioni dell’Ambulatorio Veterinario Canevari,
+// dell’Ospedale Veterinario San Francesco,
+// del CDC Vet Codogno
+// e del Pronto Soccorso Veterinario Laudense.
 // ---------------------------------------------------------------------------
 
 import React from "react";
@@ -118,6 +119,35 @@ export default function Contacts() {
                             <Phone className="text-emerald-600" size={22} />
                             <a href="tel:0377431619" className="hover:underline">
                                 {t("contacts.clinic3.phone")}
+                            </a>
+                        </p>
+                    </div>
+
+                    {/* 🔹 PRONTO SOCCORSO VETERINARIO LAUDENSE */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6">
+                        {/* Nome struttura */}
+                        <h3 className="text-2xl font-semibold text-emerald-700 mb-4">
+                            {t("contacts.clinic4.name")}
+                        </h3>
+
+                        {/* 📍 Indirizzo cliccabile (Google Maps) */}
+                        <p className="flex items-center gap-2 text-lg mb-3">
+                            <MapPin className="text-emerald-600" size={22} />
+                            <a
+                                href="https://www.google.com/maps/dir/?api=1&destination=Viale+Milano+22,+26900+Lodi+LO"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline"
+                            >
+                                {t("contacts.clinic4.address")}
+                            </a>
+                        </p>
+
+                        {/* ☎️ Numero di telefono */}
+                        <p className="flex items-center gap-2 text-lg">
+                            <Phone className="text-emerald-600" size={22} />
+                            <a href="tel:0371422408" className="hover:underline">
+                                {t("contacts.clinic4.phone")}
                             </a>
                         </p>
                     </div>
