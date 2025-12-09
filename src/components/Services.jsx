@@ -10,7 +10,7 @@ import {
     Droplet,
     Activity,
     Syringe,
-    Stethoscope,
+    Ruler,
 } from "lucide-react";
 import { Horse } from "phosphor-react";
 import { useTranslation } from "react-i18next"; // ✅ Import traduzioni
@@ -24,7 +24,7 @@ export default function Services() {
     const services = [
         {
             key: "chirurgia_palpebrale",
-            icon: <Stethoscope className="w-14 h-14 text-emerald-600 mx-auto" />,
+            icon: <Ruler className="w-14 h-14 text-emerald-600 mx-auto" />,
         },
         {
             key: "chirurgia_corneale",
