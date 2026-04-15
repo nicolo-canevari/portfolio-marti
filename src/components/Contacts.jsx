@@ -154,12 +154,9 @@ export default function Contacts() {
 
                 </div>
 
-                {/* 🔸 COPYRIGHT (opzionale, può essere riattivato se necessario) */}
-                {/*
-                <div className="mt-16 text-center text-gray-500 text-sm">
-                    {t("contacts.copyright", { year })}
+                <div className="mt-16 text-center text-gray-500 text-sm tracking-wide">
+                    ALBO MI: 4230 · P.IVA 02942450186
                 </div>
-                */}
 
             </div>
         </section>
